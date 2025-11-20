@@ -1,8 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f8f9;
+  --foreground: #101828;
+  --muted: #4b5563;
+  --panel: rgba(255, 255, 255, 0.1);
+  --panel-border: rgba(0, 0, 0, 0.12);
+  --callout: #0f172a;
+  --callout-text: #f8fafc;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --background: #050505;
+  --foreground: #e5e7eb;
+  --muted: #a1a1aa;
+  --panel: rgba(10, 10, 10, 0.1);
+  --panel-border: rgba(255, 255, 255, 0.16);
+  --callout: #f4f4f5;
+  --callout-text: #0b0b0b;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -13,14 +30,21 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme]) {
+    --background: #050505;
+    --foreground: #e5e7eb;
+    --muted: #a1a1aa;
+    --panel: rgba(10, 10, 10, 0.28);
+    --panel-border: rgba(255, 255, 255, 0.16);
+    --callout: #f4f4f5;
+    --callout-text: #0b0b0b;
+    color-scheme: dark;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  transition: background-color 200ms ease, color 200ms ease;
 }
