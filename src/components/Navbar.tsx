@@ -144,7 +144,7 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {open ? (
-          <div className="absolute right-0 top-[120%] w-full min-w-[260px] rounded-3xl border border-[var(--panel-border)] bg-[var(--panel)] p-4 shadow-[0_22px_70px_rgba(0,0,0,0.26)] backdrop-blur-2xl backdrop-saturate-150 md:hidden">
+          <div className="absolute right-0 top-[120%] w-full min-w-[260px] rounded-3xl border border-[var(--panel-border)] bg-[var(--background)] p-4 shadow-[0_22px_70px_rgba(0,0,0,0.26)] backdrop-blur-2xl backdrop-saturate-150 md:hidden">
             <div className="flex flex-col gap-2 text-base font-medium text-[var(--muted)]">
               {links.map((link) => (
                 <a

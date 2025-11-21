@@ -3,6 +3,7 @@
 :root {
   --background: #f7f8f9;
   --foreground: #101828;
+  --title: maroon;
   --muted: #4b5563;
   --panel: rgba(255, 255, 255, 0.1);
   --panel-border: rgba(0, 0, 0, 0.12);
@@ -14,6 +15,7 @@
 :root[data-theme="dark"] {
   --background: #050505;
   --foreground: #e5e7eb;
+  --title: maroon;
   --muted: #a1a1aa;
   --panel: rgba(10, 10, 10, 0.1);
   --panel-border: rgba(255, 255, 255, 0.16);
