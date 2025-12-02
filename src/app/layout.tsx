@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import {
-  Fascinate_Inline,
   Geist,
   Geist_Mono,
   Pacifico,
-  Playfair_Display,
 } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,22 +17,22 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const brandFont = Fascinate_Inline({
-  variable: "--font-brand",
-  subsets: ["latin"],
-  weight: "400",
-});
-
 const pacifico = Pacifico({
   variable: "--font-pacifico",
   subsets: ["latin"],
   weight: "400",
 });
 
-const serifDisplay = Playfair_Display({
+const serifDisplay = localFont({
   variable: "--font-serif-display",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  src: [
+    {
+      path: "../../public/fonts/science-gothic/ScienceGothic-Thin.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -49,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${brandFont.variable} ${pacifico.variable} ${serifDisplay.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} ${serifDisplay.variable} antialiased`}
       >
         {children}
       </body>

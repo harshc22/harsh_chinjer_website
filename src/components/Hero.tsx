@@ -75,21 +75,22 @@ export default function HomePage() {
       </section>
 
       {/* Signature + titles */}
-      <section className="relative overflow-hidden pt-6 pb-6">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <div className="mx-auto flex max-w-3xl flex-col items-center gap-5">
+      <section className="relative overflow-hidden pt-4 pb-4">
+        <div className="mx-auto w-full px-6 text-center">
+          <div className="mx-auto flex w-full flex-col items-center gap-5">
             <motion.h2
-              className="text-5xl sm:text-6xl md:text-8xl text-[var(--title)] border-b-2"
-              style={{ fontFamily: "var(--font-pacifico)" }}
+              className="w-full text-center text-[clamp(2.4rem,16vw,3.8rem)] sm:text-[clamp(3.2rem,8vw,5.5rem)] lg:text-[clamp(4rem,11vw,12rem)] font-black leading-[0.95] sm:leading-[0.9] tracking-[0.04em] sm:tracking-[0.08em] lg:tracking-[0.12em] text-[var(--title)]"
+              style={{ fontFamily: "var(--font-serif-display)" }}
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              Harsh Chinjer
+              <span className="block">HARSH</span>
+              <span className="block">CHINJER</span>
             </motion.h2>
 
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-[var(--foreground)]"
+              className="text-3xl sm:text-3xl md:text-6xl font-semibold tracking-tight text-[var(--foreground)]"
               style={{ fontFamily: "var(--font-serif-display)" }}
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
