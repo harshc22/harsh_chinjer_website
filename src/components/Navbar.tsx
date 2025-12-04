@@ -94,8 +94,8 @@ export default function Navbar() {
             className="rounded-full outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8be9fd]/70 focus-visible:ring-offset-transparent"
           >
             <span
-              className="block rounded-full px-2 py-1 text-lg font-semibold tracking-tight bg-clip-text  drop-shadow-sm transition hover:scale-120"
-              style={{ fontFamily: "var(--font-brand)" }}
+              className="block rounded-full px-2 py-1 text-lg tracking-tight bg-clip-text  drop-shadow-sm transition hover:scale-120"
+              style={{ fontFamily: "var(--font-pacifico)" }}
             >
               {brandLabel}
             </span>
