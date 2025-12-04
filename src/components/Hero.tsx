@@ -31,6 +31,8 @@ const polaroids: Polaroid[] = [
   },
 ];
 
+const easeOutBezier: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 function PolaroidCard({
   src,
   alt,
@@ -83,7 +85,7 @@ export default function HomePage() {
               style={{ fontFamily: "var(--font-serif-display)" }}
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.7, ease: easeOutBezier }}
             >
               <span className="block">HARSH</span>
               <span className="block">CHINJER</span>
@@ -94,7 +96,7 @@ export default function HomePage() {
               style={{ fontFamily: "var(--font-serif-display)" }}
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+              transition={{ duration: 0.6, ease: easeOutBezier, delay: 0.2 }}
             >
               Software Developer
             </motion.h1>
