@@ -1,22 +1,22 @@
 import Image from "next/image";
-import { Github, Linkedin, Twitter } from "lucide-react";
-import portrait from "../images/polaroid1.jpg";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import portrait from "../images/about1.jpg";
 
 const socialLinks = [
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com",
-    icon: Linkedin,
+    icon: FaLinkedin,
   },
   {
     label: "GitHub",
     href: "https://github.com",
-    icon: Github,
+    icon: FaGithub,
   },
   {
-    label: "Twitter",
-    href: "https://twitter.com",
-    icon: Twitter,
+    label: "X",
+    href: "https://x.com",
+    icon: FaXTwitter,
   },
 ];
 
@@ -90,7 +90,7 @@ export function AboutSection() {
         <div className="flex flex-1 justify-center md:justify-end">
           <div className="relative">
             <div className="absolute inset-0 scale-110 rounded-full bg-[radial-gradient(circle,_rgba(255,255,255,0.12),_transparent_60%)] blur-2xl" />
-            <div className="relative h-44 w-44 overflow-hidden rounded-full border border-[var(--section-surface-border)] bg-white/10 shadow-[0_22px_60px_rgba(0,0,0,0.5)] sm:h-52 sm:w-52">
+            <div className="relative h-52 w-52 overflow-hidden rounded-full border border-[var(--section-surface-border)] bg-white/10 shadow-[0_22px_60px_rgba(0,0,0,0.5)] sm:h-80 sm:w-80 lg:h-120 lg:w-120">
               <Image
                 src={portrait}
                 alt="Portrait of Harsh Chinjer"

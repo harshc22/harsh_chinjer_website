@@ -10,6 +10,9 @@ export function SectionTransition() {
     offset: ["start end", "end start"],
   });
 
+  const waveY = useTransform(scrollYProgress, [0, 1], [14, -8]);
+  const glowY = useTransform(scrollYProgress, [0, 1], [6, 20]);
+  const gradientOpacity = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
   return (
     <div
@@ -17,13 +20,21 @@ export function SectionTransition() {
       aria-hidden
       className="relative h-28 w-full overflow-hidden sm:h-36 md:h-44"
     >
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-b from-[var(--background)] via-[var(--background)] to-[var(--section-surface)]"
+        style={{ opacity: gradientOpacity }}
+      />
 
-
+      <motion.div
+        className="absolute inset-x-10 bottom-3 h-16 rounded-full bg-white/35 blur-3xl mix-blend-screen"
+        style={{ y: glowY }}
+      />
 
       <motion.svg
         viewBox="0 0 1440 320"
         preserveAspectRatio="none"
         className="absolute bottom-0 left-0 h-[140%] w-full text-[var(--section-surface)]"
+        style={{ y: waveY }}
       >
         <path
           fill="currentColor"
