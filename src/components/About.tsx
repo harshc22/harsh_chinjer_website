@@ -1,22 +1,22 @@
 import Image from "next/image";
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa6";
 import portrait from "../images/about1.jpg";
 
 const socialLinks = [
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com",
+    href: "https://www.linkedin.com/in/harshchinjer/",
     icon: FaLinkedin,
   },
   {
     label: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/harshc22",
     icon: FaGithub,
   },
   {
-    label: "X",
-    href: "https://x.com",
-    icon: FaXTwitter,
+    label: "Instagram",
+    href: "https://www.instagram.com/harshchinjer/",
+    icon: FaInstagram,
   },
 ];
 
@@ -33,8 +33,7 @@ export function AboutSection() {
           <div className="space-y-5 max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-[var(--section-surface-border)] bg-white/5 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--section-surface-muted)]">
               <span>About</span>
-              <span className="h-1 w-1 rounded-full bg-[var(--section-surface-muted)]" />
-              <span>Harsh Chinjer</span>
+              
             </div>
 
             <h3 className="text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -64,9 +63,6 @@ export function AboutSection() {
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--section-surface-border)] bg-white/10 px-5 py-2 text-sm font-semibold text-[var(--section-surface-foreground)] shadow-[0_10px_30px_rgba(0,0,0,0.2)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(0,0,0,0.26)]"
               >
                 <span>Visit my blog</span>
-                <span className="text-xs text-[var(--section-surface-muted)]">
-                  Coming soon
-                </span>
               </a>
 
               {/* Social icon buttons */}
