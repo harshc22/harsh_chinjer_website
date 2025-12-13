@@ -7,6 +7,10 @@
   --muted: #4b5563;
   --panel: rgba(255, 255, 255, 0.1);
   --panel-border: rgba(0, 0, 0, 0.12);
+  --section-surface: #641220;
+  --section-surface-border: rgba(255, 255, 255, 0.16);
+  --section-surface-foreground: #f9f1f3;
+  --section-surface-muted: #f2cfd7;
   --callout: #0f172a;
   --callout-text: #f8fafc;
   color-scheme: light;
@@ -19,6 +23,10 @@
   --muted: #a1a1aa;
   --panel: rgba(10, 10, 10, 0.1);
   --panel-border: rgba(255, 255, 255, 0.16);
+  --section-surface: #641220;
+  --section-surface-border: rgba(255, 255, 255, 0.1);
+  --section-surface-foreground: #f3e7eb;
+  --section-surface-muted: #c9a7b0;
   --callout: #f4f4f5;
   --callout-text: #0b0b0b;
   color-scheme: dark;
