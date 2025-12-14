@@ -88,15 +88,16 @@ export function ExperienceTimeline() {
               >
                 <div className="rounded-2xl border border-[var(--panel-border)] bg-[var(--panel)]/90 shadow-xl shadow-black/5 backdrop-blur-sm p-5 sm:p-6">
                   <div className="flex flex-wrap items-center justify-between gap-3">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-4">
                       {item.logo && (
-                        <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-[var(--panel-border)] bg-[var(--background)] shadow-sm">
+                        <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-[var(--panel-border)] bg-[var(--background)] shadow-sm">
                           <Image
                             src={item.logo}
                             alt={`${item.company} logo`}
-                            width={48}
-                            height={48}
-                            className="h-full w-full object-cover"
+                            width={64}
+                            height={64}
+                            draggable={false}
+                            className="h-full w-full object-cover select-none"
                           />
                         </div>
                       )}
