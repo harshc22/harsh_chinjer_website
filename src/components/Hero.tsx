@@ -64,7 +64,7 @@ function PolaroidCard({
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] mt-25">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] mt-25 mb-6">
       {/* Polaroid strip */}
       <section className="relative overflow-hidden pt-16 pb-10">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 px-4 md:px-8">

@@ -66,7 +66,7 @@ export function InternshipTimeline() {
   return (
     <section
       id="internships"
-      className="mx-auto max-w-5xl px-4 md:px-8 py-16 md:py-20"
+      className="relative -mt-10 overflow-hidden rounded-t-[32px] bg-[var(--background)] shadow-[0_-22px_60px_rgba(0,0,0,0.14)] mx-auto max-w-6xl px-4 md:px-10 pt-14 pb-16 md:pt-18 md:pb-20"
     >
       <div className="mb-10 flex items-center justify-between gap-4">
         <h2 className="text-3xl md:text-4xl font-semibold text-[var(--foreground)]">

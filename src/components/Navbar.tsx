@@ -3,7 +3,7 @@
 import { Divide as Hamburger } from "hamburger-react";
 import { Moon, Sun } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 
 type Theme = "light" | "dark";
 
@@ -41,9 +41,10 @@ type ThemeToggleProps = {
   theme: Theme;
   toggleTheme: () => void;
   className?: string;
+  style?: CSSProperties;
 };
 
-function ThemeToggle({ theme, toggleTheme, className }: ThemeToggleProps) {
+function ThemeToggle({ theme, toggleTheme, className, style }: ThemeToggleProps) {
   const isDark = theme === "dark";
 
   return (
@@ -53,6 +54,7 @@ function ThemeToggle({ theme, toggleTheme, className }: ThemeToggleProps) {
       aria-pressed={isDark}
       onClick={toggleTheme}
       className={`group relative flex items-center justify-center rounded-full border border-[var(--panel-border)] bg-[var(--background)] px-2 py-1 text-[var(--muted)] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${className ?? ""}`}
+      style={style}
     >
       <div className="flex items-center gap-2 text-xs font-medium">
         <span className="relative flex h-7 w-12 items-center rounded-full bg-[var(--panel)]/80 px-1">
@@ -83,10 +85,46 @@ function ThemeToggle({ theme, toggleTheme, className }: ThemeToggleProps) {
 export default function Navbar() {
   const { theme, toggleTheme } = useThemePreference();
   const [open, setOpen] = useState(false);
+  const [invertForAbout, setInvertForAbout] = useState(false);
+  const isDark = theme === "dark";
+
+  // Flip nav text to light tones when the dark about section sits behind it in light mode
+  useEffect(() => {
+    const about = document.getElementById("about");
+    if (!about) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setInvertForAbout(entry.isIntersecting && !isDark);
+      },
+      {
+        root: null,
+        rootMargin: "-120px 0px -55% 0px",
+        threshold: [0, 0.2],
+      }
+    );
+
+    observer.observe(about);
+    return () => observer.disconnect();
+  }, [isDark]);
+
+  const navTone = isDark ? "dark" : invertForAbout ? "light-on-dark" : "light";
+  const navBg =
+    navTone === "light-on-dark" ? "rgba(100,18,32,0.55)" : "var(--panel)";
+  const navBorder =
+    navTone === "light-on-dark" ? "rgba(255,255,255,0.22)" : "var(--panel-border)";
+  const navText =
+    navTone === "light-on-dark" ? "var(--section-surface-foreground)" : "var(--foreground)";
+  const navMuted =
+    navTone === "light-on-dark" ? "var(--section-surface-muted)" : "var(--muted)";
 
   return (
     <header className="fixed inset-x-0 top-6 z-40 flex justify-center px-4">
-      <nav className="relative flex w-full items-center gap-4 rounded-full border border-[var(--panel-border)] bg-[var(--panel)] py-1.5 px-1.5 shadow-[0_18px_60px_rgba(0,0,0,0.14)] backdrop-blur-3xl backdrop-saturate-150 md:w-[80%] md:max-w-2xl">
+      <nav
+        className="relative flex w-full items-center gap-4 rounded-full border py-1.5 px-1.5 shadow-[0_18px_60px_rgba(0,0,0,0.14)] backdrop-blur-3xl backdrop-saturate-150 md:w-[80%] md:max-w-2xl"
+        style={{ backgroundColor: navBg, borderColor: navBorder, color: navText }}
+      >
         <div className="flex items-center gap-3">
           <Link
             href="/"
@@ -104,8 +142,15 @@ export default function Navbar() {
 
         {/* Mobile right controls */}
         <div className="ml-auto flex items-center gap-3 md:hidden">
-          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-          <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--panel-border)] bg-[var(--background)] text-[var(--foreground)] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+          <ThemeToggle
+            theme={theme}
+            toggleTheme={toggleTheme}
+            style={{ borderColor: navBorder, backgroundColor: navBg, color: navMuted }}
+          />
+          <div
+            className="flex h-11 w-11 items-center justify-center rounded-full border text-[var(--foreground)] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            style={{ borderColor: navBorder, backgroundColor: navBg, color: navText }}
+          >
             <Hamburger
               label="Toggle navigation"
               toggled={open}
@@ -119,12 +164,20 @@ export default function Navbar() {
         </div>
 
         {/* Desktop links */}
-        <div className="hidden flex-1 items-center justify-center gap-2 text-sm font-medium text-[var(--muted)] md:flex">
+        <div
+          className="hidden flex-1 items-center justify-center gap-2 text-sm font-medium md:flex"
+          style={{ color: navMuted }}
+        >
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-full px-4 py-2 transition duration-150 hover:bg-black/5 hover:text-[var(--foreground)] text-[16px]"
+              className={`rounded-full px-4 py-2 text-[16px] transition duration-150 ${
+                navTone === "light-on-dark"
+                  ? "hover:bg-white/10 hover:text-white"
+                  : "hover:bg-black/5 hover:text-[var(--foreground)]"
+              }`}
+              style={{ color: navMuted }}
             >
               {link.label}
             </a>
@@ -133,7 +186,11 @@ export default function Navbar() {
 
         {/* Desktop actions */}
         <div className="hidden items-center gap-3 md:flex">
-          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+          <ThemeToggle
+            theme={theme}
+            toggleTheme={toggleTheme}
+            style={{ borderColor: navBorder, backgroundColor: navBg, color: navMuted }}
+          />
           <a
             href="#contact"
             className="rounded-full border border-transparent bg-[var(--callout)] px-6 py-3 text-sm font-semibold text-[var(--callout-text)] shadow-[0_10px_30px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(0,0,0,0.24)]"
