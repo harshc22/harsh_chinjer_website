@@ -26,34 +26,31 @@ export function AboutSection() {
       id="about"
       className="relative -mt-6 overflow-hidden bg-[var(--section-surface)] pt-10 pb-16 sm:-mt-8 sm:pt-12 sm:pb-20 text-[var(--section-surface-foreground)]"
     >
-
       <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-12 px-6 md:flex-row md:items-center md:gap-16">
         {/* Text */}
         <div className="flex-1 space-y-6">
           <div className="space-y-5 max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-[var(--section-surface-border)] bg-white/5 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--section-surface-muted)]">
               <span>About</span>
-              
             </div>
 
             <h3 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-              Building clean, considered software with a bit of personality.
+              Building thoughtful software that makes life easier.
             </h3>
 
             <p className="text-base leading-relaxed text-[var(--section-surface-muted)] sm:text-lg">
-              I&apos;m a software developer focused on designing and building web
-              experiences that feel calm, fast, and intentional. I like taking
-              ideas from rough sketches to something polished that people
-              actually enjoy using.
+              I&apos;m a Software Engineering graduate from McMaster University
+              (Class of 2025) who cares about building products that genuinely
+              make life easier for people. I&apos;m always learning new tools,
+              better patterns, and sharper ways to think. I&apos;m adaptable
+              when things change and persistent when they get hard.
             </p>
 
             <p className="text-base leading-relaxed text-[var(--section-surface-muted)] sm:text-lg">
-              Right now I&apos;m working mostly with{" "}
-              <span className="font-medium text-[var(--section-surface-foreground)]">
-                Next.js, React, and TypeScript
-              </span>{" "}
-              — exploring animation, micro-interactions, and layouts that feel
-              modern without being loud.
+              I&apos;m looking for a meaningful opportunity where I can
+              contribute, grow with a strong team, and ship work that matters.
+              When I&apos;m not coding, you&apos;ll probably find me in the gym.
+              Always grateful, always improving.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-3">

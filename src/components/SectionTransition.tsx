@@ -20,15 +20,6 @@ export function SectionTransition() {
       aria-hidden
       className="relative h-28 w-full overflow-hidden sm:h-36 md:h-44"
     >
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-b from-[var(--background)] via-[var(--background)] to-[var(--section-surface)]"
-        style={{ opacity: gradientOpacity }}
-      />
-
-      <motion.div
-        className="absolute inset-x-10 bottom-3 h-16 rounded-full bg-white/35 blur-3xl mix-blend-screen"
-        style={{ y: glowY }}
-      />
 
       <motion.svg
         viewBox="0 0 1440 320"
