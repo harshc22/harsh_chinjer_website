@@ -8,6 +8,7 @@ export type ExperienceItem = {
   highlights?: string[];
   tags?: string[];
   link?: string;
+  logo?: string;
 };
 
 export const experiences: ExperienceItem[] = [
@@ -19,6 +20,7 @@ export const experiences: ExperienceItem[] = [
     end: "Present",
     summary:
       "Validated and improved AI-generated responses across multiple programming languages, ensuring correctness, reliability, and safety of LLM outputs.",
+    logo: "/logos/DA.jpg",
     highlights: [
       "Reviewed 1,000+ prompts spanning Python, JavaScript, and C++ to validate correctness and improve LLM reliability",
       "Delivered structured evaluations across 10+ AI models, improving output safety and reducing hallucinations",
@@ -34,6 +36,7 @@ export const experiences: ExperienceItem[] = [
     end: "December 2023",
     summary:
       "Built internal developer tools and data-processing utilities supporting vehicle connectivity, diagnostics, and debugging workflows.",
+    logo: "/logos/Ford.jpg",
     highlights: [
       "Developed a C++ wrapper tool enabling 20+ engineers to read/write Qualcomm EFS & NV parameters previously locked behind vendor tooling",
       "Built a custom DLT plugin with a Qt-based UI to filter critical signals from log files of 50,000+ entries, saving engineers hours per debugging session",
@@ -49,6 +52,7 @@ export const experiences: ExperienceItem[] = [
     end: "August 2023",
     summary:
       "Automated deployment workflows for aircraft mission systems software, improving reliability and reducing manual configuration time.",
+    logo: "/logos/PAL.jpg",
     highlights: [
       "Automated offline installation & configuration for AIMS-ISR using Ansible, reducing manual setup effort by 60%",
       "Packaged playbooks into a Linux container for consistent, repeatable installs, cutting environment setup time by 40%",

@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import { InternshipTimeline } from "@/components/ExperienceTimeline";
+import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { AboutSection } from "@/components/About";
 import { SectionTransition } from "@/components/SectionTransition";
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <SectionTransition />
       <AboutSection />
-      <InternshipTimeline />
+      <ExperienceTimeline />
     </div>
   );
 }
