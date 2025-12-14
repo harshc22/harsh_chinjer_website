@@ -8,6 +8,7 @@ export type ExperienceItem = {
   highlights?: string[];
   tags?: string[];
   link?: string;
+  logo?: string;
 };
 
 export const experiences: ExperienceItem[] = [
