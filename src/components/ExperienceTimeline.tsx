@@ -31,10 +31,10 @@ export function ExperienceTimeline() {
       id="experience"
       className="relative -mt-10 overflow-hidden rounded-t-[32px] bg-[var(--background)] shadow-[0_-22px_60px_rgba(0,0,0,0.14)] mx-auto max-w-6xl px-4 md:px-10 pt-14 pb-16 md:pt-18 md:pb-20"
     >
-      <div className="mb-10 flex items-center justify-between gap-4">
-        <h2 className="text-3xl md:text-4xl font-semibold text-[var(--foreground)]">
-          Experiences
-        </h2>
+      <div className="mb-10 flex flex-col gap-3">
+        <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--panel-border)] bg-[var(--background)]/70 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+          Experience
+        </span>
       </div>
 
       <motion.div
@@ -45,7 +45,7 @@ export function ExperienceTimeline() {
         className="relative"
       >
         {/* vertical line */}
-        <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-[rgba(100,18,32,0.7)] via-[rgba(100,18,32,0.2)] to-transparent md:left-1/2 md:-translate-x-1/2" />
+        <div className="absolute left-[0.375rem] top-0 h-full w-px bg-[linear-gradient(180deg,rgba(100,18,32,0.7)_0%,rgba(100,18,32,0.6)_45%,rgba(100,18,32,0.4)_75%,transparent_100%)] md:left-1/2 md:-translate-x-1/2" />
 
         <div className="space-y-10">
           {experiences.map((item, i) => (
