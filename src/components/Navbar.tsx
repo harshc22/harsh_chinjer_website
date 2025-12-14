@@ -8,9 +8,9 @@ import { useEffect, useState, type CSSProperties } from "react";
 type Theme = "light" | "dark";
 
 const links = [
+  { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
-  { href: "#about", label: "About" },
 ];
 
 const brandLabel = "HC";
