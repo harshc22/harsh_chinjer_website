@@ -47,5 +47,6 @@ export const projects: ProjectItem[] = [
     ],
     tags: ["HTML", "CSS", "JavaScript", "jQuery", "APIs"],
     github: "https://github.com/harshc22/FitSphere",
+    screenshots: ["/projects/fit_sphere.png"],
   },
 ];

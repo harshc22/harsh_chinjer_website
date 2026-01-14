@@ -82,7 +82,7 @@ export function ProjectsSection() {
         <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--panel-border)] bg-[var(--background)]/70 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
           Projects
         </span>
-        <p className="max-w-2xl text-sm text-[var(--muted)] sm:text-base">
+        <p className="max-w-2xl text-base text-[var(--muted)] sm:text-lg">
           A snapshot of focused builds with clear impact, thoughtful UX, and clean
           engineering foundations.
         </p>
@@ -138,15 +138,15 @@ export function ProjectsSection() {
                     )}
                   </div>
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+                <p className="mt-4 text-base leading-relaxed text-[var(--muted)] sm:text-lg">
                   {featured.summary}
                 </p>
 
                 {featured.bullets && featured.bullets.length > 0 && (
-                  <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
+                  <ul className="mt-4 space-y-2 text-base text-[var(--muted)]">
                     {featured.bullets.map((bullet, index) => (
                       <li key={`${bullet}-${index}`} className="flex gap-2">
-                        <span className="mt-[6px] h-1 w-3 rounded-full bg-[rgba(100,18,32,0.7)]" />
+                        <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[rgba(100,18,32,0.7)]" />
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -171,7 +171,7 @@ export function ProjectsSection() {
                 {featured.screenshots && featured.screenshots.length > 0 ? (
                   <div>
                     <div
-                      className={`relative h-72 w-full overflow-hidden rounded-2xl border border-[var(--panel-border)] ${
+                      className={`relative h-56 w-full overflow-hidden rounded-2xl border border-[var(--panel-border)] sm:h-64 md:h-72 lg:h-80 ${
                         featured.live ? "cursor-pointer transition hover:-translate-y-0.5" : ""
                       }`}
                       onClick={() => openLiveLink(featured.live)}
@@ -206,7 +206,7 @@ export function ProjectsSection() {
               >
                 {project.screenshots && project.screenshots.length > 0 ? (
                   <div
-                    className={`relative h-64 w-full overflow-hidden rounded-2xl border border-[var(--panel-border)] ${
+                    className={`relative h-48 w-full overflow-hidden rounded-2xl border border-[var(--panel-border)] sm:h-56 md:h-64 ${
                       project.live ? "cursor-pointer transition hover:-translate-y-0.5" : ""
                     }`}
                     onClick={() => openLiveLink(project.live)}
@@ -257,15 +257,15 @@ export function ProjectsSection() {
                   </div>
                 </div>
 
-                <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+                <p className="mt-3 text-base leading-relaxed text-[var(--muted)]">
                   {project.summary}
                 </p>
 
                 {project.bullets && project.bullets.length > 0 && (
-                  <ul className="mt-4 space-y-2 text-sm text-[var(--muted)]">
+                  <ul className="mt-4 space-y-2 text-base text-[var(--muted)]">
                     {project.bullets.map((bullet, index) => (
                       <li key={`${bullet}-${index}`} className="flex gap-2">
-                        <span className="mt-[6px] h-1 w-3 rounded-full bg-[rgba(100,18,32,0.7)]" />
+                        <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[rgba(100,18,32,0.7)]" />
                         <span>{bullet}</span>
                       </li>
                     ))}

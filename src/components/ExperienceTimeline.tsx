@@ -118,15 +118,15 @@ export function ExperienceTimeline() {
                     {item.location ? ` · ${item.location}` : null}
                   </div>
 
-                  <p className="mt-3 text-sm sm:text-[15px] text-[var(--muted)] leading-relaxed">
+                  <p className="mt-3 text-base text-[var(--muted)] leading-relaxed">
                     {item.summary}
                   </p>
 
                   {item.highlights && item.highlights.length > 0 && (
-                    <ul className="mt-3 space-y-1.5 text-sm text-[var(--muted)]">
+                    <ul className="mt-3 space-y-2 text-base text-[var(--muted)]">
                       {item.highlights.map((h, idx) => (
                         <li key={idx} className="flex gap-2">
-                          <span className="mt-[6px] h-1 w-3 rounded-full bg-[rgba(100,18,32,0.7)]" />
+                          <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[rgba(100,18,32,0.7)]" />
                           <span>{h}</span>
                         </li>
                       ))}
