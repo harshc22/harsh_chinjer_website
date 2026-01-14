@@ -35,7 +35,7 @@ export const projects: ProjectItem[] = [
       "Served ML models via gRPC and stored results in PostgreSQL"
     ],
     tags: ["PyTorch", "gRPC", "Go", "PostgreSQL", "Next.js"],
-    screenshots: [],
+    screenshots: ["/projects/ml_herd_management.png"],
   },
   {
     title: "Fit Sphere",
