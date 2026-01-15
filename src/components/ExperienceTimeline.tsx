@@ -29,7 +29,7 @@ export function ExperienceTimeline() {
   return (
     <section
       id="experience"
-      className="relative -mt-10 overflow-hidden rounded-t-[32px] bg-[var(--background)] shadow-[0_-22px_60px_rgba(0,0,0,0.14)] mx-auto max-w-6xl px-4 md:px-10 pt-14 pb-16 md:pt-18 md:pb-20"
+      className="relative -mt-10 overflow-hidden rounded-[32px] bg-[var(--experience-bg,var(--background))] shadow-[0_-22px_60px_rgba(0,0,0,0.14)] mx-auto max-w-6xl px-4 md:px-10 pt-14 pb-16 md:pt-18 md:pb-20"
     >
       <div className="mb-10 flex flex-col gap-3">
         <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--panel-border)] bg-[var(--background)]/70 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
@@ -90,7 +90,7 @@ export function ExperienceTimeline() {
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex items-center gap-4">
                       {item.logo && (
-                        <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-[var(--panel-border)] bg-[var(--background)] shadow-sm">
+                        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full border border-[var(--panel-border)] bg-[var(--background)] shadow-sm aspect-square">
                           <Image
                             src={item.logo}
                             alt={`${item.company} logo`}
@@ -118,15 +118,15 @@ export function ExperienceTimeline() {
                     {item.location ? ` · ${item.location}` : null}
                   </div>
 
-                  <p className="mt-3 text-sm sm:text-[15px] text-[var(--muted)] leading-relaxed">
+                  <p className="mt-3 text-base text-[var(--muted)] leading-relaxed">
                     {item.summary}
                   </p>
 
                   {item.highlights && item.highlights.length > 0 && (
-                    <ul className="mt-3 space-y-1.5 text-sm text-[var(--muted)]">
+                    <ul className="mt-3 space-y-2 text-base text-[var(--muted)]">
                       {item.highlights.map((h, idx) => (
                         <li key={idx} className="flex gap-2">
-                          <span className="mt-[6px] h-1 w-3 rounded-full bg-[rgba(100,18,32,0.7)]" />
+                          <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[rgba(100,18,32,0.7)]" />
                           <span>{h}</span>
                         </li>
                       ))}
@@ -135,14 +135,14 @@ export function ExperienceTimeline() {
 
                   {item.tags && item.tags.length > 0 && (
                     <div className="mt-4 flex flex-wrap gap-2">
-                      {item.tags.map((t) => (
-                        <span
-                          key={t}
-                          className="rounded-full border border-[var(--panel-border)] bg-[var(--background)]/70 px-3 py-1 text-xs font-medium text-[var(--muted)]"
-                        >
-                          {t}
-                        </span>
-                      ))}
+                    {item.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full border border-[rgba(100,18,32,0.7)] bg-[rgba(100,18,32,0.15)] px-3 py-1 text-xs font-semibold text-[var(--title)]"
+                      >
+                        {t}
+                      </span>
+                    ))}
                     </div>
                   )}
                 </div>
