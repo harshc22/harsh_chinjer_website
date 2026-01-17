@@ -82,10 +82,6 @@ export function ProjectsSection() {
         <span className="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--panel-border)] bg-[var(--background)]/70 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
           Projects
         </span>
-        <p className="max-w-2xl text-base text-[var(--muted)] sm:text-lg">
-          A snapshot of focused builds with clear impact, thoughtful UX, and clean
-          engineering foundations.
-        </p>
       </div>
 
       <motion.div
