@@ -93,6 +93,7 @@ export default function Navbar() {
   const { theme, toggleTheme } = useThemePreference();
   const [open, setOpen] = useState(false);
   const [invertForAbout, setInvertForAbout] = useState(false);
+  const [invertForContact, setInvertForContact] = useState(false);
   const isDark = theme === "dark";
 
   // Flip nav text to light tones when the dark about section sits behind it in light mode
@@ -116,7 +117,29 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, [isDark]);
 
-  const navTone = isDark ? "dark" : invertForAbout ? "light-on-dark" : "light";
+  // Flip nav text to light tones when the contact section sits behind it.
+  useEffect(() => {
+    const contact = document.getElementById("contact");
+    if (!contact) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setInvertForContact(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "-120px 0px -55% 0px",
+        threshold: [0, 0.2],
+      }
+    );
+
+    observer.observe(contact);
+    return () => observer.disconnect();
+  }, []);
+
+  const navTone =
+    invertForContact || (!isDark && invertForAbout) ? "light-on-dark" : isDark ? "dark" : "light";
   const navBg =
     navTone === "light-on-dark" ? "rgba(100,18,32,0.55)" : "var(--panel)";
   const navBorder =

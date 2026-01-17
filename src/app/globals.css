@@ -7,6 +7,9 @@
   --muted: #4b5563;
   --panel: rgba(255, 255, 255, 0.1);
   --panel-border: rgba(0, 0, 0, 0.12);
+  --tag-text: var(--title);
+  --tag-border: rgba(100, 18, 32, 0.7);
+  --tag-bg: rgba(100, 18, 32, 0.15);
   --section-surface: #641220;
   --section-surface-border: rgba(255, 255, 255, 0.16);
   --section-surface-foreground: #f9f1f3;
@@ -23,6 +26,9 @@
   --muted: #c9ccd3;
   --panel: rgba(255, 255, 255, 0.04);
   --panel-border: rgba(255, 255, 255, 0.22);
+  --tag-text: var(--foreground);
+  --tag-border: rgba(100, 18, 32, 0.6);
+  --tag-bg: rgba(100, 18, 32, 0.2);
   --section-surface: #641220;
   --section-surface-border: rgba(255, 255, 255, 0.1);
   --section-surface-foreground: #f3e7eb;
@@ -48,6 +54,9 @@
     --muted: #c9ccd3;
     --panel: rgba(255, 255, 255, 0.04);
     --panel-border: rgba(255, 255, 255, 0.22);
+    --tag-text: var(--foreground);
+    --tag-border: rgba(100, 18, 32, 0.6);
+    --tag-bg: rgba(100, 18, 32, 0.2);
     --experience-bg: #121212;
     --experience-border: rgba(255, 255, 255, 0.18);
     --callout: #f4f4f5;
