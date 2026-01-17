@@ -16,19 +16,26 @@ const links = [
 const brandLabel = "HC";
 
 function useThemePreference() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === "undefined") return "light";
-    const stored = window.localStorage.getItem("theme") as Theme | null;
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    return stored ?? (prefersDark ? "dark" : "light");
-  });
+  const [theme, setTheme] = useState<Theme>("light");
+  const [isThemeReady, setIsThemeReady] = useState(false);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    const stored = window.localStorage.getItem("theme") as Theme | null;
+    const datasetTheme = document.documentElement.dataset.theme as Theme | undefined;
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const resolved = stored ?? datasetTheme ?? (prefersDark ? "dark" : "light");
+    setTheme(resolved);
+    setIsThemeReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isThemeReady) return;
     document.documentElement.dataset.theme = theme;
     if (typeof window !== "undefined") {
       window.localStorage.setItem("theme", theme);
     }
-  }, [theme]);
+  }, [theme, isThemeReady]);
 
   const toggleTheme = () => {
     setTheme((current) => (current === "light" ? "dark" : "light"));
@@ -126,9 +133,19 @@ export default function Navbar() {
         style={{ backgroundColor: navBg, borderColor: navBorder, color: navText }}
       >
         <div className="flex items-center gap-3">
-          <Link
-            href="/"
+          <button
+            type="button"
             aria-label="Go to home"
+            onClick={() => {
+              if (window.location.hash) {
+                window.history.replaceState(
+                  null,
+                  document.title,
+                  window.location.pathname + window.location.search
+                );
+              }
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             className="rounded-full outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8be9fd]/70 focus-visible:ring-offset-transparent"
           >
             <span
@@ -137,7 +154,7 @@ export default function Navbar() {
             >
               {brandLabel}
             </span>
-          </Link>
+          </button>
         </div>
 
         {/* Mobile right controls */}
