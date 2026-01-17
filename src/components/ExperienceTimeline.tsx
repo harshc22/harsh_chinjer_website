@@ -138,7 +138,7 @@ export function ExperienceTimeline() {
                     {item.tags.map((t) => (
                       <span
                         key={t}
-                        className="rounded-full border border-[rgba(100,18,32,0.7)] bg-[rgba(100,18,32,0.15)] px-3 py-1 text-xs font-semibold text-[var(--title)]"
+                        className="rounded-full border border-[var(--tag-border)] bg-[var(--tag-bg)] px-3 py-1 text-xs font-semibold text-[var(--tag-text)]"
                       >
                         {t}
                       </span>
