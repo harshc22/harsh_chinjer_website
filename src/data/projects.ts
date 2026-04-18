@@ -26,6 +26,22 @@ export const projects: ProjectItem[] = [
     live: "https://www.anmolmakeovers.ca/",
   },
   {
+    title: "Gurbani Verse",
+    summary:
+      "An iOS app and widget for reading a new Gurbani verse each day, with a clean reading experience, language options, favorites, and sharing.",
+    bullets: [
+      "Built in SwiftUI with a home screen widget for quick access to the daily verse.",
+      "Added English, Punjabi, and Spanish translations, with optional transliteration support.",
+      "Included favorites, shareable verse cards, and daily notifications.",
+      "Shipped on the App Store as a polished personal product.",
+    ],
+    tags: ["Swift", "SwiftUI", "iOS", "WidgetKit"],
+    github: "https://github.com/harshc22/GurbaniVerse-public",
+    screenshots: ["/projects/gurbani_verse.png"],
+    featured: true,
+    live: "https://apps.apple.com/us/app/gurbani-verse/id6759237724",
+  },
+  {
     title: "Herd Management ML Capstone",
     summary:
       "ML system predicting milk production and health traits in dairy cow offspring using parental and genetic data.",
